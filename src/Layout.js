@@ -3,7 +3,7 @@ import { View, Text } from 'react-primitives'
 
 export default function Layout({children}) {
   return (
-    <View>
+    <View className="container">
       {children}
     </View>
   )

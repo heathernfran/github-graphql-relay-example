@@ -33,13 +33,13 @@ class Dashboard extends React.Component {
 function ShowMore({repositories, onClick}) {
   if (repositories.pageInfo.hasNextPage) {
     return (
-      <li className="list-group-item show-more">
+      <Text className="show-more">
         <a href="#" onClick={onClick}>
           Show more repositories...
         </a>
 
         <span className="octicon octicon-sync spinner"></span>
-      </li>
+      </Text>
     )
   } else {
     return <noscript></noscript>

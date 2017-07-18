@@ -24,7 +24,7 @@ export default createFragmentContainer(
 
 function RepositoryListItem({repository}) {
   return (
-    <View className="list-group-item">
+    <View className="">
       <RepositoryStar repository={repository} />
       <RepositoryIcon repository={repository} />
 
