@@ -1,4 +1,5 @@
 import React from 'react'
+import { View } from 'react-primitives'
 import {createFragmentContainer, graphql} from 'react-relay'
 
 import RepositoryIcon from './RepositoryIcon'
@@ -23,13 +24,13 @@ export default createFragmentContainer(
 
 function RepositoryListItem({repository}) {
   return (
-    <li className="list-group-item">
+    <View className="list-group-item">
       <RepositoryStar repository={repository} />
       <RepositoryIcon repository={repository} />
 
       <a href={repository.url}>
         {repository.owner.login}/{repository.name}
       </a>
-    </li>
+    </View>
   )
 }

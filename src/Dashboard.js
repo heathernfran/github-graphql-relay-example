@@ -1,4 +1,5 @@
 import React from 'react'
+import { View, Text, Image, StyleSheet } from 'react-primitives'
 import {createPaginationContainer, graphql} from 'react-relay'
 
 import RepositoryListItem from './RepositoryListItem'
@@ -8,23 +9,19 @@ class Dashboard extends React.Component {
     const {viewer} = this.props.data
 
     return (
-      <div className="repositories">
-        <ul className="list-group">
-          <li className="list-group-item">
-            <strong>Your repositories</strong>
-            <span className="badge">{viewer.repositories.totalCount}</span>
-          </li>
+      <View className="repositories">
+        <Text>Your repositories</Text>
+        <Text className="badge">{viewer.repositories.totalCount}</Text>
 
-          {viewer.repositories.edges.map(edge => (
-            <RepositoryListItem repository={edge.node} key={edge.node.id} />
-          ))}
+        {viewer.repositories.edges.map(edge => (
+          <RepositoryListItem repository={edge.node} key={edge.node.id} />
+        ))}
 
-          <ShowMore repositories={viewer.repositories} onClick={event => {
-            event.preventDefault()
-            this.loadMoreRepositories()
-          }} />
-        </ul>
-      </div>
+        <ShowMore repositories={viewer.repositories} onClick={event => {
+          event.preventDefault()
+          this.loadMoreRepositories()
+        }} />
+      </View>
     )
   }
 

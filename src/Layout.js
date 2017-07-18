@@ -1,9 +1,10 @@
 import React from 'react'
+import { View, Text } from 'react-primitives'
 
 export default function Layout({children}) {
   return (
-    <div className="container">
+    <View>
       {children}
-    </div>
+    </View>
   )
 }

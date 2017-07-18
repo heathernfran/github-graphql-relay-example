@@ -1,4 +1,5 @@
 import React from 'react'
+import { Text } from 'react-primitives'
 import {createFragmentContainer, graphql} from 'react-relay'
 
 export default createFragmentContainer(
@@ -14,12 +15,12 @@ export default createFragmentContainer(
 
 function RepositoryIcon({repository}) {
   if (repository.isFork) {
-    return <span className="octicon octicon-repo-forked"></span>
+    return <Text className="octicon octicon-repo-forked"></Text>
   } else if (repository.isPrivate) {
-    return <span className="octicon octicon-lock"></span>
+    return <Text className="octicon octicon-lock"></Text>
   } else if (repository.isMirror) {
-    return <span className="octicon octicon-mirror"></span>
+    return <Text className="octicon octicon-mirror"></Text>
   } else {
-    return <span className="octicon octicon-repo"></span>
+    return <Text className="octicon octicon-repo"></Text>
   }
 }

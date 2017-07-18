@@ -1,4 +1,5 @@
 import React from 'react'
+import { View, Text } from 'react-primitives'
 import environment from './createRelayEnvironment'
 import {commitMutation, createFragmentContainer, graphql} from 'react-relay'
 
@@ -61,14 +62,14 @@ function RepositoryStar({repository}) {
   const octiconClassName = repository.viewerHasStarred ? "octicon octicon-star highlight" : "octicon octicon-star"
 
   return (
-    <span className="star-badge">
+    <Text className="star-badge">
       {repository.stargazers.totalCount}
       <a href="#" onClick={(e) => {
         e.preventDefault()
         repository.viewerHasStarred ? unstarMutation(repository.id) : starMutation(repository.id)
       }}>
-        <span className={octiconClassName}></span>
+        <Text className={octiconClassName}></Text>
       </a>
-    </span>
+    </Text>
   )
 }

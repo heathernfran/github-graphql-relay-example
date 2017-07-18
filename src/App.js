@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { View, Text } from 'react-primitives'
 
 import {
   QueryRenderer,
@@ -30,7 +31,7 @@ class App extends Component {
 
 function RenderApp({error, props}) {
   if (error) {
-    return <div>{error.message}</div>
+    return <Text>{error.message}</Text>
   } else if (props) {
     return (
       <Layout>
@@ -38,7 +39,7 @@ function RenderApp({error, props}) {
       </Layout>
     )
   } else {
-    return <div>Loading</div>
+    return <Text>Loading</Text>
   }
 }
 
