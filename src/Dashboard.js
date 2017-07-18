@@ -14,15 +14,15 @@ class Dashboard extends React.Component {
             <strong>Your repositories</strong>
             <span className="badge">{viewer.repositories.totalCount}</span>
           </li>
-
-          {viewer.repositories.edges.map(edge => (
-            <RepositoryListItem repository={edge.node} key={edge.node.id} />
-          )).reverse()}
-
+          
           <ShowMore repositories={viewer.repositories} onClick={event => {
             event.preventDefault()
             this.loadMoreRepositories()
           }} />
+
+          {viewer.repositories.edges.map(edge => (
+            <RepositoryListItem repository={edge.node} key={edge.node.id} />
+          )).reverse()}
         </ul>
       </div>
     )
