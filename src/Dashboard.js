@@ -17,7 +17,7 @@ class Dashboard extends React.Component {
 
           {viewer.repositories.edges.map(edge => (
             <RepositoryListItem repository={edge.node} key={edge.node.id} />
-          ))}
+          )).reverse()}
 
           <ShowMore repositories={viewer.repositories} onClick={event => {
             event.preventDefault()
